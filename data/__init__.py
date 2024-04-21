@@ -21,7 +21,7 @@ class DataLoader:
         self.dataset = CreateDataset(opt)
         self.dataloader = torch.utils.data.DataLoader(
             self.dataset,
-            batch_size=opt.batch_size,
+            batch_size=5*opt.batch_size,
             shuffle=not opt.serial_batches,
             num_workers=int(opt.num_threads),
             collate_fn=collate_fn)
